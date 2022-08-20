@@ -10,19 +10,33 @@ const Bottom = () => {
 }
 
 class App extends React.Component {
-  helpText = "Help text"
+  constructor(props){ //ДОЛЖНЫ ПРИНЯТЬ props
+    super(props) // обовязкова строчка для состояния
+    this.state = {
+        helpText: "Help text",
+        userData: ""
+    }
+
+    this.inputClick = this.inputClick.bind(this)
+  }  
+ 
 
   render(){
     return(<div>
       <Header title="шапка сайта" />    
-      <h1>{this.helpText}</h1><input placeholder={this.helpText} onClick={this.InputClick} onMouseOver={this.mouseOver}/>
-    <p>{this.helpText === "Help text" ? "Yes": "No"}</p>
+      <h1>{this.state.helpText}</h1><input placeholder={this.state.helpText} 
+      onChange={event => this.setState({userData : event.target.value})}
+      onClick={this.inputClick} 
+      onMouseOver={this.mouseOver}/>
+      <h2>{this.state.userData}</h2>
+    <p>{this.state.helpText === "Help text" ? "Yes": "No"}</p>
     <Image image={logo}/>
     <Bottom />
     </div>)
   }
 
   inputClick () {
+    this.setState({helpText: "Changed"})
     console.log("Clicked")
   }
 

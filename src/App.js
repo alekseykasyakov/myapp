@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./components/Header"
-
+import Image from "./components/Image"
+import logo from "./img/logo512.png"
 
 const Bottom = () => {
   return (
@@ -16,6 +17,7 @@ class App extends React.Component {
       <Header title="шапка сайта" />    
       <h1>{this.helpText}</h1><input placeholder={this.helpText} onClick={this.InputClick} onMouseOver={this.mouseOver}/>
     <p>{this.helpText === "Help text" ? "Yes": "No"}</p>
+    <Image image={logo}/>
     <Bottom />
     </div>)
   }

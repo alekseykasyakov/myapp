@@ -62,3 +62,34 @@ aside form button {
 aside form button:hover {
     transform:scale(1.1);
 }
+/******************************************/
+.user form input:not([type="checkbox"]), 
+.user form textarea, 
+.user form button{
+    width: 90%;
+    padding: 15px 5%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-bottom:10px;
+    border:0;
+    background: #fff;
+    color:#000;
+    outline:none;
+    font-size:15px;
+}
+.user form{
+    margin-top: 20px;
+}
+.user form input[type="checkbox"]{
+    margin: 10px;
+}
+
+.user form button {
+    width:50%;
+    margin: auto;
+    cursor:pointer;
+
+}
+.user form button:hover {
+    transform:scale(1.01);
+}
